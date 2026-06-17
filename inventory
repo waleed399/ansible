@@ -1,2 +1,2 @@
 [servers]
-server1 ansible_host=192.168.10.114 ansible_user=server ansible_ssh_private_key_file=~/.ssh/id_ed25519
+server1 ansible_host=192.168.100.197 ansible_user=server ansible_ssh_private_key_file=~/.ssh/id_ed25519 apache_package=apache2 php_package=libapache2-mod-php httpd_package=httpd

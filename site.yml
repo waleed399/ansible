@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+
+  - name: install packages
+    tags: apache,php
+    package:
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
+      update_cache: yes
+
+  - name: install packages for centOS
+    tags: centOS,dnf,httpd
+    package:
+      name:
+        - "{{ httpd_package }}"
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
