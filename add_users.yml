@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create new user
+    tags: always
+    user:
+      name: new
+      groups: root
+
+  - name: add ssh key for new
+    authorized_key:
+      user: new
+      key: "

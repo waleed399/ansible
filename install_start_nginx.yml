@@ -1,0 +1,16 @@
+---
+
+- hosts: workstations
+  become: true
+
+  tasks:
+    - name: install nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: start nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
